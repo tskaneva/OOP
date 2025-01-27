@@ -176,6 +176,7 @@ Beds: 50, Doctors: 10, Ambulances: 2
 Specializations: 5, Equipment Types: 10
 ```
 
+
 ---
 ## Допълнителни ресурси
 1. 
