@@ -29,11 +29,11 @@ public:
 };
 
 int main() {
-    //Animal* pet1 = new Dog();
-    Pomeran *pet1 = new Dog;
+    Animal* pet1 = new Dog();
+    // Pomeran *pet1 = new Dog;
 
     pet1->makeSound();
-    pet1->furLength();
+    // pet1->furLength();
 
     delete pet1;
     return 0;
