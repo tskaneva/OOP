@@ -17,7 +17,7 @@ public:
     virtual void furLength() const = 0;
 };
 
-// Клас Dog (Куче), наследник на Animal
+// Опит за наследяване на два абстрактни класа => компилационна грешка
 class Dog : public Animal, public Pomeran {
 public:
     void makeSound() const override {

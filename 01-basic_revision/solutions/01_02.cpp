@@ -1,3 +1,4 @@
+#include <Windows.h>
 #include <iostream>
 using namespace std;
 
@@ -12,10 +13,9 @@ void bubbleSort(int arr[], int size) {
 }
 
 int main() {
-    int n;
-    cout << "Въведете броя на елементите: ";
-    cin >> n;
+    SetConsoleOutputCP(CP_UTF8);
 
+    const int n = 5;
     int arr[n];
     cout << "Въведете числата: ";
     for (int i = 0; i < n; i++) {

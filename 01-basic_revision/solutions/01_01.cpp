@@ -1,11 +1,11 @@
+#include <Windows.h>
 #include <iostream>
 using namespace std;
 
 int main() {
-    int n;
-    cout << "Въведете броя на числата: ";
-    cin >> n;
+    SetConsoleOutputCP(CP_UTF8);
 
+    const int n = 5;
     int arr[n];
     cout << "Въведете числата: ";
     for (int i = 0; i < n; i++) {

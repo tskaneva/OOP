@@ -1,3 +1,4 @@
+#include <Windows.h>
 #include <iostream>
 using namespace std;
 
@@ -10,6 +11,7 @@ bool isPrime(int n) {
 }
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
     int num;
     cout << "Въведете число: ";
     cin >> num;
