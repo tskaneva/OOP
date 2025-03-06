@@ -3,29 +3,33 @@
 using namespace std;
 
 class Vector {
-public:
+private:
     double x, y, z;
+public:
+    void set(const double x, const double y, const double z) {
+      this->x = x;
+      this->y = y;
+      this->z = z;
+    }
 
-    double length() {
+    double length() const {
         return sqrt(x * x + y * y + z * z);
     }
 
-    void scale(double factor) {
+    void scale(const double factor) {
         x *= factor;
         y *= factor;
         z *= factor;
     }
 
-    void print() {
+    void print() const {
         cout << "[" << x << ", " << y << ", " << z << "]" << endl;
     }
 };
 
 int main() {
     Vector v;
-    v.x = 3;
-    v.y = 4;
-    v.z = 0;
+    v.set(3, 4, 0);
     cout << "Length: " << v.length() << endl; // Length: 5
     v.scale(2);
     v.print(); // [6, 8, 0]
