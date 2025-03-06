@@ -44,7 +44,7 @@ int main() {
     dynamicAccount->balance = 1000.0;
     dynamicAccount->deposit(500); // Депозит чрез указател
     dynamicAccount->withdraw(300); // Теглене чрез указател
-    cout << "\nDynamically created account: " << dynamicAccount->accountNumber << endl;
+    cout << "Dynamically created account: " << dynamicAccount->accountNumber << endl;
     cout << "Balance after operation: " << dynamicAccount->balance << endl;
 
     // Освобождаване на паметта

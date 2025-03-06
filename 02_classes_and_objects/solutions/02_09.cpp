@@ -24,7 +24,7 @@ int main() {
     ptr->x = 5.0; // Модифициране на координатите чрез указателя
     ptr->y = 4.0;
 
-    cout << "\nPointer:" << endl;
+    cout << "Pointer:" << endl;
     p.print(); // Извежда: (5.0, 4.0)
 
     // Динамично създаване на обект от класа Point
@@ -32,7 +32,7 @@ int main() {
     dynamicPtr->x = -1.5; // Задаване на стойности чрез указателя
     dynamicPtr->y = 2.3;
 
-    cout << "\nDynamically created object:" << endl;
+    cout << "Dynamically created object:" << endl;
     dynamicPtr->print(); // Извежда: (-1.5, 2.3)
 
     // Освобождаване на паметта

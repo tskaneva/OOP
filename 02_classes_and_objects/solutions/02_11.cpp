@@ -1,31 +1,42 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-class Point {
+class BankAccount {
 public:
-    double x, y;
+    string accountNumber = "BG000000000";
+    double balance = 0;
 
-    void print() {
-        cout << "(" << x << ", " << y << ")" << endl;
+    void deposit(double amount) {
+        balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if (amount > balance) {
+            cout << "No money" << endl;
+        } else {
+            balance -= amount;
+        }
+    }
+
+    void getBalance() const{
+      cout << accountNumber << ": " << balance << endl;
+        // balance = balance + 25;  // не може да бъде изпълнено, защото методът е константен и не променя стойностите на атрибутите
+    }
+
+    void getAccountNumber() const {
+      cout << accountNumber << endl;
     }
 };
 
 int main() {
-    // Създаване на обект p от класа Point
-    Point p;
-    p.x = 3.5;
-    p.y = -2.1;
+    // константен обект
+    const BankAccount account;
+    account.getBalance();
 
-    cout << "Object p:" << endl;
-    p.print(); // Извежда: (3.5, -2.1)
-
-    // Създаване на указател към обекта p
-    Point* ptr = &p;
-    ptr->x = 5.0; // Модифициране на координатите чрез указателя
-    ptr->y = 4.0;
-
-    cout << "\nPointer:" << endl;
-    p.print(); // Извежда: (5.0, 4.0)
+    // динамично създаден константен обект
+    const BankAccount *accountPtr = &account;
+    accountPtr->getBalance();
 
     return 0;
 }
