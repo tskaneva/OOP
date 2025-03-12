@@ -131,7 +131,7 @@ int main() {
     ...
 
     cout << endl << "Pointer before modifications:" << endl;
-    p.print(); // Извежда: (5.0, 4.0)
+    p.print(); // Извежда: (3.5, -2.1)
 
     // Модифициране на координатите чрез указателя
     ....
