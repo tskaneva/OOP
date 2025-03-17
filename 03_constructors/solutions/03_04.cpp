@@ -1,40 +1,45 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-class Rectangle {
+// Клас Student
+class Student {
+private:
+    string name;           // Име на студента
+    string facultyNumber;  // Факултетен номер
+    double averageGrade;   // Среден успех
+    int year;              // Година на обучение
+
 public:
-    double width, height;
-
-    Rectangle() {}
-    Rectangle(double w, double h): width(w), height(h) {}
-    Rectangle(Rectangle &obj) {
-      width = obj.width;
-      height = obj.height;
+    // Конструктор с параметри и стойности по подразбиране
+    Student(string n = "Unknown", string fn = "000000", double grade = 0.0, int yr = 1) {
+        name = n;
+        facultyNumber = fn;
+        averageGrade = grade;
+        year = yr;
     }
 
-    double area() {
-        return width * height;
-    }
-
-    double perimeter() {
-        return 2 * (width + height);
-    }
-
-    void printInfo() const{
-      cout << width << "; " << height << endl;
+    // Метод за отпечатване на информация
+    void printInfo() const {
+        cout << "Name: " << name << endl;
+        cout << "Faculty Number: " << facultyNumber << endl;
+        cout << "Average Grade: " << averageGrade << endl;
+        cout << "Year: " << year << endl;
     }
 };
 
+// Главна функция
 int main() {
-    Rectangle r;
-    r.width = 4.0;
-    r.height = 5.0;
-    r.printInfo();
+    // Създаване на студент чрез конструктора със стойности по подразбиране
+    Student defaultStudent;
+    cout << "Default student:" << endl;
+    defaultStudent.printInfo();
+    cout << endl;
 
-    Rectangle r2(5.0, 6);
-    r2.printInfo();
+    // Създаване на студент чрез конструктора с параметри
+    Student paramStudent("Maria Ivanova", "123456", 5.75, 3);
+    cout << "Student with parameters:" << endl;
+    paramStudent.printInfo();
 
-    Rectangle r3(r2);
-    r3.printInfo();
     return 0;
 }

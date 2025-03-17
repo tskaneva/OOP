@@ -1,86 +1,53 @@
-// Класът Town описва град с различни характеристики и функционалности
 #include <iostream>
 #include <string>
 using namespace std;
 
-// Дефиниция на класа Town
-class Town {
+// Клас Student
+class Student {
 private:
-    string name; // Име на града
-    int population;   // Население
-    double area;      // Площ на града в квадратни километри
-    string mayor; // Име на кмета
-    int schools;      // Брой училища
-    int hospitals;    // Брой болници
+    string name;           // Име на студента
+    string facultyNumber;  // Факултетен номер
+    double averageGrade;   // Среден успех
+    int year;              // Година на обучение
 
 public:
     // Конструктор по подразбиране
-    Town() : name("Unknown"), population(0), area(0.0), mayor("Unknown"), schools(0), hospitals(0) {}
+    Student() {
+        name = "Unknown";
+        facultyNumber = "000000";
+        averageGrade = 0.0;
+        year = 1;
+    }
 
     // Конструктор с параметри
-    /* Частта след : е инициализиращ списък (initializer list). Той директно присвоява стойности на атрибутите на класа
-        Това означава, че:
-        - name ще приеме стойността на townName,
-        - population ще приеме стойността на townPopulation
-        - т.н
-        Тялото на конструктора ({}) е празно, защото всички атрибути вече са инициализирани в списъка за инициализация.
-     */
-    Town(string townName, int townPopulation, double townArea, string townMayor, int townSchools, int townHospitals)
-        : name(townName), population(townPopulation), area(townArea), mayor(townMayor), schools(townSchools), hospitals(townHospitals) {}
-
-    // Метод за задаване на име
-    void setName(const string &townName) {
-        name = townName;
+    Student(string n, string fn, double grade, int yr) {
+        name = n;
+        facultyNumber = fn;
+        averageGrade = grade;
+        year = yr;
     }
 
-    // Метод за получаване на име
-    string getName() const {
-        return name;
-    }
-
-    // Метод за изчисляване на гъстотата на населението
-    double calculatePopulationDensity() const {
-        if (area == 0) {
-            return 0.0; // Избягване на деление на нула
-        }
-        return population / area;
-    }
-
-    // Метод за добавяне на училище
-    void addSchool() {
-        schools++;
-    }
-
-    // Метод за отпечатване на информация за града
+    // Метод за отпечатване на информация
     void printInfo() const {
-        cout << "Town: " << name << "\n";
-        cout << "Population: " << population << "\n";
-        cout << "Area: " << area << " sq.km\n";
-        cout << "Mayor: " << mayor << "\n";
-        cout << "Schools: " << schools << "\n";
-        cout << "Hospitals: " << hospitals << "\n";
-        cout << "Population Density: " << calculatePopulationDensity() << " people/sq.km\n";
+        cout << "Name: " << name << endl;
+        cout << "Faculty Number: " << facultyNumber << endl;
+        cout << "Average Grade: " << averageGrade << endl;
+        cout << "Year: " << year << endl;
     }
 };
 
+// Главна функция
 int main() {
-    // Създаване на обекти на класа Town
-    Town defaultTown; // Град с подразбиращи се стойности
-    // Промяна на името на града
-    defaultTown.setName("Roussee");
+    // Създаване на студент чрез конструктора по подразбиране
+    Student defaultStudent;
+    cout << "Default student:" << endl;
+    defaultStudent.printInfo();
+    cout << endl;
 
-    // Добавяне на училище
-    defaultTown.addSchool();
-
-    Town myTown("Ruse", 30000, 150.5, "John Doe", 10, 5);
-
-    // Отпечатване на информация
-    cout << "Default Town Info:\n";
-    defaultTown.printInfo();
-
-    // Отпечатване на информация
-    cout << "\nMy Town Info:\n";
-    myTown.printInfo();
+    // Създаване на студент чрез конструктора с параметри
+    Student paramStudent("Maria Ivanova", "123456", 5.75, 3);
+    cout << "Student with parameters:" << endl;
+    paramStudent.printInfo();
 
     return 0;
 }
