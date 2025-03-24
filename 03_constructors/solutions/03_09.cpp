@@ -10,8 +10,7 @@ private:
 
 public:
     // Конструктор
-    Book(const string& title, const string& author)
-        : title(title), author(author), isBorrowed(false) {}
+    Book(const string& title, const string& author) : title(title), author(author), isBorrowed(false) {}
 
     // Метод за извеждане на информация за книгата
     void printInfo() const {
