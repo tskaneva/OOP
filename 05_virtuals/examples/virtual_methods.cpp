@@ -3,14 +3,14 @@ using namespace std;
 
 class Base {
 public:
-    virtual void display() {  // Виртуален метод
+    void display() {  // Виртуален метод
         cout << "Base class display" << endl;
     }
 };
 
 class Derived : public Base {
 public:
-    void display() override {  // Предефиниране на метода
+    void display() {  // Предефиниране на метода
         cout << "Derived class display" << endl;
     }
 };
