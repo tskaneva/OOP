@@ -9,7 +9,7 @@ public:
     virtual ~LaptopComponent() {}  // Виртуален деструктор
 };
 
-// Клас за процесора
+// Абстрактен Клас за процесора
 class Processor : public LaptopComponent {
 protected:
     string brand;
@@ -38,7 +38,7 @@ public:
     }
 };
 
-// Дискретно GPU (наследява Processor)
+// Dedicated GPU (наследява Processor)
 class DedicatedGPU : public Processor {
 private:
     int vram;
